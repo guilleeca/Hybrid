@@ -1,0 +1,11 @@
+Figuras anatómicas usadas en Hybrid
+
+- front.svg / back.svg: "Muscular system" y "Muscular system-back" de Wikimedia Commons
+  https://commons.wikimedia.org/wiki/File:Muscular_system.svg
+  https://commons.wikimedia.org/wiki/File:Muscular_system-back.svg
+  (consulta la licencia en esas páginas)
+
+- m1.svg ... m15.svg: capas de músculos del proyecto wger (https://github.com/wger-project/wger),
+  carpeta wger/core/static/images/muscles, con licencia CC BY-SA 3.0.
+
+Los archivos se han optimizado con SVGO sin cambiar el dibujo.

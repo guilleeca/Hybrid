@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="description" content="Entrenos de gimnasio, carreras y rutas." />
+    <link rel="icon" type="image/png" href="/hybrid/favicon.png" />
+    <link rel="apple-touch-icon" href="/hybrid/apple-touch-icon.png" />
+    <title>Hybrid</title>
+    <script>
+      // La app se llamaba Heavy: sus datos guardados en el navegador pasan a Hybrid (una vez)
+      try {
+        for (var i = localStorage.length - 1; i >= 0; i--) {
+          var k = localStorage.key(i)
+          if (k && k.indexOf('heavy.') === 0) {
+            var n = 'hybrid.' + k.slice(6)
+            if (localStorage.getItem(n) == null) localStorage.setItem(n, localStorage.getItem(k))
+            localStorage.removeItem(k)
+          }
+        }
+      } catch (e) {}
+    </script>
+    <script>
+      // Tema guardado (Ajustes → Apariencia) antes de pintar, para que no parpadee
+      try {
+        var s = JSON.parse(localStorage.getItem('hybrid.settings') || '{}'), h = new Date().getHours(), t = s.theme || 'dark'
+        var f = s.nightFrom == null ? 21 : s.nightFrom, u = s.nightTo == null ? 8 : s.nightTo
+        var dark = t === 'dark' || (t === 'system' && !matchMedia('(prefers-color-scheme: light)').matches) || (t === 'schedule' && (f > u ? h >= f || h < u : h >= f && h < u))
+        document.documentElement.dataset.theme = dark ? 'dark' : 'light'
+      } catch (e) {}
+    </script>
+    <script type="module" crossorigin src="/hybrid/assets/index-rbbDKe2T.js"></script>
+    <link rel="stylesheet" crossorigin href="/hybrid/assets/index-BaOt8loM.css">
+  <link rel="manifest" href="/hybrid/manifest.webmanifest"></head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>

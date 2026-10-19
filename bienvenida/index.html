@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#000000" />
+    <title>Bienvenido a Hybrid</title>
+    <meta name="description" content="Cómo instalar Hybrid: entrenos de gimnasio, carreras y rutas." />
+    <link rel="icon" type="image/png" href="../favicon.png" />
+    <style>
+      /* Página de bienvenida para los invitados: sin cuenta y sin la app (se abre desde WhatsApp) */
+      :root {
+        --accent: #1c8cff;
+        --bg: #000;
+        --surface: #1a1a1c;
+        --surface-2: #26262a;
+        --text: #fff;
+        --text-2: #a1a1a8;
+        color-scheme: dark;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+        line-height: 1.5;
+      }
+      main {
+        max-width: 520px;
+        margin: 0 auto;
+        padding: max(32px, env(safe-area-inset-top)) 20px 48px;
+        display: flex;
+        flex-direction: column;
+        gap: 22px;
+      }
+      header { text-align: center; display: flex; flex-direction: column; align-items: center; gap: 10px; }
+      header img { width: 76px; height: 76px; border-radius: 18px; }
+      h1 { margin: 0; font-size: 28px; letter-spacing: -0.02em; }
+      header p { margin: 0; color: var(--text-2); font-size: 16px; }
+      .tabs { display: flex; padding: 3px; border-radius: 12px; background: var(--surface-2); }
+      .tabs button {
+        flex: 1; min-height: 40px; border: 0; border-radius: 9px; background: none; color: var(--text-2);
+        font: inherit; font-size: 15px; font-weight: 600; cursor: pointer;
+      }
+      .tabs button[aria-selected='true'] { background: var(--accent); color: #fff; }
+      .card { background: var(--surface); border-radius: 16px; padding: 18px; display: flex; flex-direction: column; gap: 14px; }
+      .card[hidden] { display: none; }
+      ol { margin: 0; padding: 0; list-style: none; counter-reset: s; display: flex; flex-direction: column; gap: 14px; }
+      li { counter-increment: s; display: flex; gap: 12px; font-size: 15.5px; }
+      li::before {
+        content: counter(s); flex: none; width: 26px; height: 26px; border-radius: 50%; background: var(--surface-2);
+        display: grid; place-items: center; font-size: 13px; font-weight: 700; color: var(--accent);
+      }
+      li small { display: block; color: var(--text-2); font-size: 14px; margin-top: 2px; }
+      .btn {
+        display: flex; align-items: center; justify-content: center; gap: 8px; min-height: 50px; border-radius: 12px;
+        background: var(--accent); color: #fff; font-weight: 700; font-size: 16px; text-decoration: none;
+      }
+      .btn.sec { background: var(--surface-2); }
+      .note { margin: 0; color: var(--text-2); font-size: 14px; text-align: center; }
+      b { font-weight: 600; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <img src="../pwa-192.png" alt="" />
+        <h1>Te han invitado a Hybrid</h1>
+        <p>Gimnasio, carreras y rutas en una sola app.</p>
+      </header>
+
+      <div class="tabs" role="tablist" aria-label="Tu móvil">
+        <button role="tab" data-tab="android">Android</button>
+        <button role="tab" data-tab="iphone">iPhone</button>
+        <button role="tab" data-tab="pc">Ordenador</button>
+      </div>
+
+      <section class="card" data-panel="android">
+        <ol>
+          <li><span>Descarga la app con el botón de abajo.<small>Es un archivo .apk de unos pocos MB.</small></span></li>
+          <li><span>Ábrelo desde las descargas y pulsa <b>Instalar</b>.<small>Si el móvil lo pide, permite instalar apps de esta fuente (es normal: la app no está en Google Play).</small></span></li>
+          <li><span>Abre <b>Hybrid</b> y pulsa <b>Continuar con Google</b> con el correo al que te han invitado.</span></li>
+          <li><span>Acepta las notificaciones para que te avise al acabar el descanso.</span></li>
+        </ol>
+        <a class="btn" href="https://github.com/guilleeca/hybrid/releases/download/android/hybrid.apk">Descargar para Android</a>
+      </section>
+
+      <section class="card" data-panel="iphone" hidden>
+        <ol>
+          <li><span>Abre esta página en <b>Safari</b>.<small>Desde WhatsApp: pulsa los tres puntos o el icono de compartir → Abrir en Safari.</small></span></li>
+          <li><span>Pulsa el botón de abrir la app de abajo.</span></li>
+          <li><span>En Safari, pulsa <b>Compartir</b> (el cuadrado con la flecha) → <b>Añadir a pantalla de inicio</b>.<small>Así tendrás Hybrid con su icono, como una app más.</small></span></li>
+          <li><span>Ábrela desde el icono y pulsa <b>Continuar con Google</b> con el correo al que te han invitado.</span></li>
+        </ol>
+        <a class="btn" href="../">Abrir Hybrid</a>
+      </section>
+
+      <section class="card" data-panel="pc" hidden>
+        <ol>
+          <li><span>Abre Hybrid con el botón de abajo.</span></li>
+          <li><span>Pulsa <b>Continuar con Google</b> con el correo al que te han invitado.</span></li>
+          <li><span>Si quieres, instálala desde el icono de instalar de la barra de direcciones de Chrome.</span></li>
+        </ol>
+        <a class="btn" href="../">Abrir Hybrid</a>
+      </section>
+
+      <p class="note">¿Te sale que tu cuenta no tiene acceso? Pide a quien te invitó que revise tu correo.</p>
+    </main>
+    <script>
+      // Se abre la pestaña de tu móvil
+      var ua = navigator.userAgent
+      var tab = /Android/i.test(ua) ? 'android' : /iPhone|iPad|iPod/i.test(ua) ? 'iphone' : 'pc'
+      function show(t) {
+        document.querySelectorAll('[data-tab]').forEach(function (b) { b.setAttribute('aria-selected', String(b.dataset.tab === t)) })
+        document.querySelectorAll('[data-panel]').forEach(function (p) { p.hidden = p.dataset.panel !== t })
+      }
+      document.querySelectorAll('[data-tab]').forEach(function (b) { b.onclick = function () { show(b.dataset.tab) } })
+      show(tab)
+    </script>
+  </body>
+</html>

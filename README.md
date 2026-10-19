@@ -1,1 +1,8 @@
-# hybrid
+# Hybrid
+
+App de entrenamiento para gimnasio y rutas.
+
+- Web: https://guilleeca.github.io/hybrid/
+- Android: descarga `hybrid.apk` en [Releases](https://github.com/guilleeca/hybrid/releases/tag/android).
+
+Este repositorio solo contiene la versión publicada de la app.
