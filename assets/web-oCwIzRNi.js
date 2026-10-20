@@ -1,1 +1,0 @@
-import{d as e}from"./index-GhxRXGw5.js";var t=class extends e{async getPluginVersion(){return{version:`web`}}};export{t as CapacitorShareTargetWeb};
