@@ -1,0 +1,1 @@
+import{d as e}from"./index-LX4D_aIz.js";var t=class extends e{async getPluginVersion(){return{version:`web`}}};export{t as CapacitorShareTargetWeb};
