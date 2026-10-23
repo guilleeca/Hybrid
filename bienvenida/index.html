@@ -69,6 +69,10 @@
         background: var(--accent); color: #fff; font-weight: 700; font-size: 16px; text-decoration: none;
       }
       .btn.sec { background: var(--surface-2); }
+      .warn {
+        padding: 12px 14px; border-radius: 12px; background: rgba(255, 159, 10, 0.14); color: #ffb340; font-size: 14px; line-height: 1.45;
+      }
+      .warn b { color: #ffd08a; }
       .note { margin: 0; color: var(--text-2); font-size: 14px; text-align: center; }
       b { font-weight: 600; }
     </style>
@@ -90,12 +94,16 @@
       <section class="card" data-panel="android">
         <ol>
           <li><span>Abre esta página en <b>Chrome</b>.<small>Desde WhatsApp: pulsa los tres puntos → Abrir en Chrome (o en tu navegador).</small></span></li>
-          <li><span>Descarga la app con el botón de abajo.<small>Si la descarga se queda en el 100 %, ciérrala: el archivo ya está en <b>Archivos → Descargas</b>.</small></span></li>
+          <li><span>Descarga la app con el botón de abajo.</span></li>
           <li><span>Abre <b>hybrid.apk</b> desde las descargas y pulsa <b>Instalar</b>.<small>Si el móvil lo pide, permite instalar apps de esta fuente (es normal: la app no está en Google Play).</small></span></li>
           <li><span>Abre <b>Hybrid</b> y pulsa <b>Continuar con Google</b> con el correo al que te han invitado.</span></li>
           <li><span>Acepta las notificaciones para que te avise al acabar el descanso.</span></li>
         </ol>
-        <a class="btn" href="https://github.com/guilleeca/hybrid/releases/download/android/hybrid.apk">Descargar para Android</a>
+        <div class="warn" id="inapp" hidden>
+          Estás en la ventana de <b id="inapp-name">otra app</b> y ahí la descarga puede quedarse parada en el 100 %. Pulsa <b>⋮</b> (arriba a la
+          derecha) → <b>Abrir en Chrome</b> (o en tu navegador) y descárgala desde allí.
+        </div>
+        <a class="btn" href="https://github.com/guilleeca/hybrid/releases/latest/download/hybrid.apk">Descargar para Android</a>
       </section>
 
       <section class="card" data-panel="iphone" hidden>
@@ -129,6 +137,16 @@
       }
       document.querySelectorAll('[data-tab]').forEach(function (b) { b.onclick = function () { show(b.dataset.tab) } })
       show(tab)
+
+      // Abierta desde WhatsApp, Instagram…: Android la abre en una ventana del navegador dentro de esa app,
+      // y ahí las descargas a veces se quedan en el 100 % sin terminar. Se avisa de abrirla en el navegador.
+      var ref = document.referrer || ''
+      if (/Android/i.test(ua) && ref.indexOf('android-app://') === 0 && !/chrome|firefox|brave|sbrowser|opera|edge/i.test(ref)) {
+        var app = ref.slice(14).split('/')[0]
+        var names = { 'com.whatsapp': 'WhatsApp', 'com.whatsapp.w4b': 'WhatsApp', 'org.telegram.messenger': 'Telegram', 'com.instagram.android': 'Instagram' }
+        document.getElementById('inapp-name').textContent = names[app] || 'otra app'
+        document.getElementById('inapp').hidden = false
+      }
     </script>
   </body>
 </html>
