@@ -1,1 +1,0 @@
-import{f as e}from"./index-vsZl7-oE.js";var t=class extends e{async getPluginVersion(){return{version:`web`}}};export{t as CapacitorShareTargetWeb};
