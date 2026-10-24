@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Rutina de Hybrid</title>
     <meta name="robots" content="noindex" />
-    <!-- Enlace de una rutina compartida: /hybrid/r/?id=… → la app web en #/r/… (con la app de Android instalada, se abre en ella) -->
+    <!-- Enlace de una rutina compartida: /Hybrid/r/?id=… → la app web en #/r/… (con la app de Android instalada, se abre en ella) -->
     <script>
       var id = new URLSearchParams(location.search).get('id') || ''
       location.replace('../' + (/^[0-9a-f-]{36}$/i.test(id) ? '#/r/' + id : ''))
