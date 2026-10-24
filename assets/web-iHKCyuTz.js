@@ -1,0 +1,1 @@
+import{f as e}from"./index-hq86Jlxw.js";var t=class extends e{async getPluginVersion(){return{version:`web`}}};export{t as CapacitorShareTargetWeb};
