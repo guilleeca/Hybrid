@@ -1,1 +1,0 @@
-import{_ as e}from"./index-CbuSvh4l.js";var t=class extends e{async getPluginVersion(){return{version:`web`}}};export{t as CapacitorShareTargetWeb};
