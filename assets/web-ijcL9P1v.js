@@ -1,0 +1,1 @@
+import{_ as e}from"./index-C_LPzTOf.js";var t=class extends e{async getPluginVersion(){return{version:`web`}}};export{t as CapacitorShareTargetWeb};
