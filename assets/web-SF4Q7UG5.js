@@ -1,0 +1,1 @@
+import{i as e}from"./dist-CPAKd-Fu.js";var t=class extends e{async getPluginVersion(){return{version:`web`}}};export{t as CapacitorShareTargetWeb};
