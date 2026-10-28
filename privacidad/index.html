@@ -26,7 +26,7 @@
   </head>
   <body>
     <main>
-      <p id="back"><a href="../bienvenida/">← Hybrid</a></p>
+      <p id="back"><a id="backlink" href="../">← Volver</a></p>
       <h1>Privacidad y condiciones</h1>
       <p class="upd">Última actualización: 28 de octubre de 2026</p>
 
@@ -102,7 +102,21 @@
     </main>
     <script>
       // Dentro de la app (Ajustes → Privacidad) esta página se ve en un marco: sin el enlace de volver
-      if (window.top !== window.self) document.getElementById('back').hidden = true
+      var back = document.getElementById('back')
+      if (window.top !== window.self) back.hidden = true
+      // Volver a donde estabas; si no hay nada atrás (se abrió en una pestaña nueva), a la app
+      document.getElementById('backlink').addEventListener('click', function (e) {
+        if (history.length > 1 && document.referrer) {
+          e.preventDefault()
+          history.back()
+        } else {
+          // Pestaña nueva sin historial ni referencia (enlace con noreferrer): intentar cerrarla y, si el navegador no deja, ir a la app
+          e.preventDefault()
+          var href = this.href
+          window.close()
+          setTimeout(function () { location.href = href }, 150)
+        }
+      })
     </script>
   </body>
 </html>
