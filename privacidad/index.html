@@ -26,7 +26,7 @@
   </head>
   <body>
     <main>
-      <p><a href="../bienvenida/">← Hybrid</a></p>
+      <p id="back"><a href="../bienvenida/">← Hybrid</a></p>
       <h1>Privacidad y condiciones</h1>
       <p class="upd">Última actualización: 28 de octubre de 2026</p>
 
@@ -96,8 +96,13 @@
         <li>Tus entrenos y fotos siguen siendo tuyos. Nos das permiso solo para guardarlos y mostrarlos a quien tú decidas dentro de la app.</li>
       </ul>
 
-      <h2>Cambios</h2>
-      <p>Si esta política cambia de forma importante, lo avisaremos en la app. La fecha de arriba indica la última revisión.</p>
+      <h2>Aceptación y cambios</h2>
+      <p>Al crear tu cuenta se te pide aceptar estas condiciones y esta política de privacidad.
+        Si cambian de forma importante, te lo volveremos a preguntar al abrir la app. La fecha de arriba indica la última revisión.</p>
     </main>
+    <script>
+      // Dentro de la app (Ajustes → Privacidad) esta página se ve en un marco: sin el enlace de volver
+      if (window.top !== window.self) document.getElementById('back').hidden = true
+    </script>
   </body>
 </html>
