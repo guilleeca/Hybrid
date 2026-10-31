@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime-Wy9s6hX0.js";import{C as t}from"./ui-D-MywnGv.js";import{wn as n}from"./index-CC2cCXki.js";var r=e();function i(){let e=t();return(0,r.jsx)(n,{onCancel:()=>e(-1),onSaved:t=>e(`/ejercicio/${encodeURIComponent(t)}`,{replace:!0})})}export{i as NewExercise};
