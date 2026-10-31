@@ -1,6 +1,6 @@
 # Hybrid
 
-App de entrenamiento para atletas híbridos. Trackea entrenamientos de gimnasio, carreras, rutas...
+App integral de entrenamiento y analítica diseñada para atletas híbridos. Planifica, registra y optimiza tu rendimiento en un solo lugar.
 
 - Web: https://guilleeca.github.io/Hybrid/
 - Android: descarga `hybrid.apk` en [Releases](https://github.com/guilleeca/Hybrid/releases/tag/android).
