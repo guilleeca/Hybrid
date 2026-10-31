@@ -1,1 +1,0 @@
-var e;function t(t){let n=document.getElementById(`toast`);n||(n=document.createElement(`div`),n.id=`toast`,n.className=`toast`,n.setAttribute(`role`,`status`),document.body.appendChild(n)),n.textContent=t,n.classList.add(`show`),window.clearTimeout(e),e=window.setTimeout(()=>n?.classList.remove(`show`),2600)}export{t};
