@@ -1,6 +1,8 @@
+<p align="center"><img src="pwa-512.png" alt="Logo de Hybrid" width="140"></p>
+
 # Hybrid
 
-App integral de entrenamiento y analítica diseñada para atletas híbridos. Planifica, registra y optimiza tu rendimiento en un solo lugar.
+App de entrenamiento para gimnasio y rutas.
 
 - Web: https://guilleeca.github.io/Hybrid/
 - Android: descarga `hybrid.apk` en [Releases](https://github.com/guilleeca/Hybrid/releases/tag/android).
