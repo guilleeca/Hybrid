@@ -1,4 +1,4 @@
-<p align="center"><img src="pwa-512.png" alt="Logo de Hybrid" width="140"></p>
+<p align="center"><img src="readme-logo.png" alt="Logo de Hybrid" width="140"></p>
 
 # Hybrid
 
