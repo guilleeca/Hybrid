@@ -4,7 +4,7 @@
    Se carga en el service worker (vite.config.ts → workbox.importScripts). */
 
 const PHOTO_CACHE = 'workout-photos-v1'
-const PHOTO_MAX = 400
+const PHOTO_MAX = 150
 
 self.addEventListener('fetch', (event) => {
   const req = event.request
