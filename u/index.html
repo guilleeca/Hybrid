@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Perfil de Hybrid</title>
+    <meta name="robots" content="noindex" />
+    <!-- Enlace a un perfil (Compartir perfil): /Hybrid/u/?n=usuario → la app web en #/u/usuario (con la app de Android instalada, se abre en ella) -->
+    <script>
+      var n = (new URLSearchParams(location.search).get('n') || '').toLowerCase()
+      location.replace('../' + (/^[a-z0-9._]{3,24}$/.test(n) ? '#/u/' + n : ''))
+    </script>
+    <style>
+      body { margin: 0; background: #000; color: #fff; font: 16px system-ui, sans-serif; display: grid; place-items: center; min-height: 100vh; }
+    </style>
+  </head>
+  <body>
+    <p>Abriendo el perfil…</p>
+  </body>
+</html>
